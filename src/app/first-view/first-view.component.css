@@ -1,0 +1,12 @@
+.mat-card-header {
+  flex-direction: column;
+}
+
+.mat-card-title {
+  font-weight: bold;
+}
+
+img {
+  max-width: 500px;
+  max-height: 300px;
+}

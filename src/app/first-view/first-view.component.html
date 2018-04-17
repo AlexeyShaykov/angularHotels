@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+  <img mat-card-image src="{{ data.img }}" alt="">
+  <mat-card-header>
+    <div *ngFor="let item of dataKeys">
+      <mat-card-title>{{ item }}</mat-card-title>
+      <mat-card-subtitle>{{ data.data[item] }}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-actions>
+    <button (click)="onChange('hotel')" mat-button>HOTEL</button>
+    <button (click)="onChange('weather')" mat-button>WEATHER</button>
+    <button (click)="onChange('social_info')" mat-button>SOCIAL</button>
+  </mat-card-actions>
+</mat-card>

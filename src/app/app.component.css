@@ -1,0 +1,11 @@
+.app-wrapper {
+  max-width: 1000px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

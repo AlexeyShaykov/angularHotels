@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { data$ } from './data';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public streamData$ = data$;
+  public data;
+  public activeView: string = 'hotel';
+
+  onChange(data) {
+    this.activeView = data;
+  }
 }
