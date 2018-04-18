@@ -19,7 +19,7 @@ export class FirstViewComponent implements DoCheck {
   onChange(data) {
     this.change.emit(data);
   }
-  private dataKeys = [];
+  public dataKeys = [];
   constructor() {}
 
   ngDoCheck() {
