@@ -16,9 +16,9 @@ export const data = [
     img: 'assets/images/weather/w.jpg',
     data: {
       description:
-        'Thunderstorms likely. Low 23C. Winds light and variable. Chance of rain 80%.',
-      water: 12,
-      temperature: 22
+        'Thunderstorms likely. Low 7C. Winds light and variable. Chance of rain 80%.',
+      water: 2,
+      temperature: 7
     }
   },
   {

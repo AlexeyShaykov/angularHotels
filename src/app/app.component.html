@@ -3,7 +3,7 @@
   <app-first-view [data]="data | customFilter:activeView" (change)="onChange($event)"></app-first-view>
   <div class="image-wrapper">
   <app-second-view *ngFor="let item of data | customSplice:activeView"
-  [data]="item"
+  [data]="item" (change)="onChange($event)"
   ></app-second-view>
 </div>
 </div>
