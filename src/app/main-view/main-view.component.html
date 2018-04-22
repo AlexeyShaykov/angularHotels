@@ -1,0 +1,30 @@
+<mat-card class="hotel-wrapper example-card">
+  <img mat-card-image src="{{ selectedHotel.img }}" alt="">
+
+  <div class="types">
+        <ul>
+          <li *ngFor="let type of hotelTypes" (click)="onChangeType(type)">
+            <a>{{ type }}</a>
+          </li>
+        </ul>
+  </div>
+  <div class="village" >
+    <h3>Righteous indignation & like</h3>
+    <span class="line"> </span>
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2" #scrollbar>
+        <app-hotel *ngFor="let hotel of hotels" [hotel]="hotel" (hotelClick)="selectedHotel=$event"></app-hotel>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+<div class="image-wrapper">
+<mat-card class="example-card">
+  <app-social [social]="selectedHotel.social_info"></app-social>
+</mat-card>
+
+<mat-card class="example-card">
+<app-weather [weather]="selectedHotel.weather"></app-weather>
+</mat-card>
+</div>

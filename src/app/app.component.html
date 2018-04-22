@@ -1,14 +1,7 @@
 
-<div class="app-wrapper" *ngIf="streamData$ | async as data">
-  <app-first-view [data]="data | customFilter:activeView" (change)="onChange($event)"></app-first-view>
-  <div class="image-wrapper">
-  <app-second-view *ngFor="let item of data | customSplice:activeView"
-  [data]="item" (change)="onChange($event)"
-  ></app-second-view>
+<div class="app-wrapper" *ngIf="streamData$">
+  <app-main-view
+    [hotels]="streamData$ | getHolesByKey:activeType"
+    (change)="onChangeType($event)">
+  </app-main-view>
 </div>
-</div>
-
-
-<!-- <div *ngIf="usersStream$ | async as users; else loader">
-
-</div> -->

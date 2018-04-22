@@ -2,13 +2,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { filter } from 'lodash';
 
 @Pipe({
-  name: 'customFilter'
+  name: 'getHolesByKey'
 })
-export class CustomFilterPipe implements PipeTransform {
-  transform(data: any[], searchTerm: string): any {
+export class GetHolesByKey implements PipeTransform {
+  transform(data: Hotel[], searchTerm: string, key: string = 'type'): Hotel[] {
     if (!searchTerm) {
       return data;
     }
-    return filter(data, { name: searchTerm })[0];
+    return filter(data, { [key]: searchTerm });
   }
 }

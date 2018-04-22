@@ -1,17 +1,25 @@
-import { Component } from '@angular/core';
-import { data$ } from './data';
+import { Component, OnInit } from '@angular/core';
+
+import { HotelsService } from './common/sevices/hotels.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  public streamData$ = data$;
+export class AppComponent implements OnInit {
+  public streamData$: Hotel[];
   public data;
-  public activeView: string = 'hotel';
+  public activeType: string = 'hotel';
 
-  onChange(data) {
-    this.activeView = data;
+  constructor(private _hotels: HotelsService) {}
+  ngOnInit() {
+    this._hotels.hotels.subscribe(data => {
+      this.streamData$ = data;
+    });
+  }
+
+  onChangeType(data) {
+    this.activeType = data;
   }
 }
